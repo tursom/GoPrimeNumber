@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"awesomeProject/PrimeNumber"
+	"GoPrimeNumber/PrimeNumber"
 )
 
 type _uarr = []uint64
@@ -35,9 +35,11 @@ func UsingTime(action func()) int64 {
 }
 
 func main() {
+	//fmt.Print(PrimeNumber.Decomposition(9991))
 	fmt.Println(UsingTime(func() {
-		for i := uint64(1); i <= 1000000; i++ {
-			PrimeNumber.Decomposition(i)
-		}
+		PrimeNumber.Calc(2000000000)
+		//for i := uint64(1); i <= 1000000; i++ {
+		//	PrimeNumber.Decomposition(i)
+		//}
 	}))
 }

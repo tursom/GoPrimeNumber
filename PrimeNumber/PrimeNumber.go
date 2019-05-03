@@ -3,7 +3,7 @@ package PrimeNumber
 import (
 	"math"
 
-	"awesomeProject/BitArray"
+	"GoPrimeNumber/BitArray"
 )
 
 var _bitArray = BitArray.BitArray(0, true)
@@ -63,7 +63,7 @@ func Calc(num uint64) {
 	for i := uint64(1); i <= sqrtMaxNumber; i++ {
 		if _bitArray.Get(i) {
 			doubleI := i<<1 + 1
-			for j := i + doubleI; j < checkedNumber; j += doubleI {
+			for j := (doubleI * doubleI) >> 1; j < checkedNumber; j += doubleI {
 				_bitArray.Down(j)
 			}
 		}
