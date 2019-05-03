@@ -1,11 +1,12 @@
 package PrimeNumber
 
 import (
-	"awesomeProject/BitArray"
 	"math"
+
+	"awesomeProject/BitArray"
 )
 
-var _bitArray = BitArray.BitArray(true)
+var _bitArray = BitArray.BitArray(0, true)
 var _maxNumber = uint64(math.Sqrt(float64(^uint64(0))))
 
 func CheckedNumber() uint64 {

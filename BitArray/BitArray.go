@@ -9,10 +9,10 @@ func bitMapNeedSize(size uint64) uint64 {
 	return ((size-1)>>6 + 1) & 0xffffffffffffff
 }
 
-func BitArray(defaultState bool) Type {
+func BitArray(size uint64, defaultState bool) Type {
 	return Type{
 		defaultState,
-		make([]uint64, 0),
+		make([]uint64, bitMapNeedSize(size)),
 	}
 }
 
