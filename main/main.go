@@ -35,7 +35,6 @@ func UsingTime(action func()) int64 {
 }
 
 func main() {
-	//fmt.Print(PrimeNumber.Decomposition(9991))
 	fmt.Println(UsingTime(func() {
 		PrimeNumber.Calc(2000000000)
 		//for i := uint64(1); i <= 1000000; i++ {
