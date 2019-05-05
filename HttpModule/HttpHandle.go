@@ -27,3 +27,15 @@ func Hello(w http.ResponseWriter, r *http.Request) {
 		log.Fatal("r.ParseForm(): ", err)
 	}
 }
+
+func Get(url string, header map[string]string) (resp *http.Response, err error) {
+	client := &http.Client{}
+	request, err := http.NewRequest("GET", url, nil)
+	if err != nil {
+		return nil, err
+	}
+	for k, v := range header {
+		request.Header.Add(k, v)
+	}
+	return client.Do(request)
+}
